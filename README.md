@@ -99,3 +99,71 @@ this project is to develop a machine learning pipeline which will predict if the
 • Orbits ES-L1, GEO, HEO, SSO, and VLEO had the most success rate.
 • Both Logistic Regression and Decision tree classifiers showed the optimal machine learning algorithms for the provided dataset, with a test accuracy of 94.44%.
 
+
+
+# Project-4: Deep Learning Project (MIT Applied Data Science Capstone)
+
+# Project Name: Facial emotion detection using ANN, CNN, and Transfer Learning (Github link: https://github.com/farzana-zaki/Facial-emotion-detection)
+
+## Business Context:
+Facial emotions and their analysis are essential for detecting and understanding human behavior, personality, mental state, etc. Most people can recognize facial emotions quickly regardless of gender, race, and 
+nationality. However, extracting features from face-to-face is a challenging, complicated, and sensitive task for computer vision techniques, such as deep learning, image processing, and machine learning to
+perform automated facial emotion recognition and classification. Some key challenges in extracting features from the facial image dataset include a variation of head pose, resolution and size of the image, background, and presence of other objects (hand, ornaments, eyeglasses, etc).In recent years, deep learning has become an efficient approach with the implementation of various architectures that allow the automatic extraction of features and classification using convolutional neural network (CNN), transfer learning, and recurrent neural network (RNN). This project aims to build a CNN model for accurate facial emotion detection.
+
+## Objective: 
+The purpose of this project is to build a CNN model for accurate facial emotion detection. The proposed CNN model performs multi-class classification on images of facial emotions to classify the expressions
+according to the associated emotion.
+
+## Solution summary:
+The proposed CNN model performs multi-class classification on images of facial emotions, classifying the expressions according to the associated emotion.
+
+In this facial emotion detection project, various CNN models (simple, transfer learning, and complex) are employed for training, validation, and testing to observe their accuracies in detecting those emotions.
+In total, 17 different configuration CNN models were applied and evaluated. Simple and transfer learning CNN models are overfitting and have low F1 scores.
+
+For building the proposed CNN model, the hyperparameter tuning using a random search from the Keras tuner was applied to select the building blocks of the complex CNN models. Adam with three learning rates, 0.1,0.01, and 0.001, are used as an optimizer. A layer with five convolutional blocks for feature selection and three dense layers for classification is used for the complex CNN models with batch sizes of 16,32 and 64. Out of three complex CNN models, model 6a(CNN model with five convolutional blocks for feature selection and three dense layers for the classification, with batch size of 32, learning rate of 0.001, and Adam optimizer) shows the best performance. Model 6a is selected as the final proposed CNN model for face emotion detection.
+
+The final proposed model solved the overfitting problem and is well generalized and optimized with training, validation, and overall test accuracies of 72.23%,69.10%, and 74%, respectively. This model has achieved an average F1 score of 0.74. Batch normalization and dropout are used to solve the overfitting problem.
+
+However, the model has poor performance for detecting class-1 (neutral) and class-2 (sad) with F1 scores of 0.70 and 0.56, respectively.
+
+## Key recommendations and future implementation:
+(1) The training dataset is slightly imbalanced. However, the validation dataset is pretty much imbalanced. Total number of images of the four classes (Happy:1825, Neutral:1216, Sad:1139, Surprises:797) in the validation dataset. As we can see, 'surprise' and data have less frequency (0.16) compared to the other three emotions. So, the validation dataset is imbalanced due to the 'surprise' dataset. We could employ an
+oversampling technique for the 'surprise' dataset to make a balanced dataset and then again train the model and compare the performances.
+
+(2)Also, there are some poor-quality images in the training dataset. For example, some images contain watermarked text, and some training images do not have any facial expressions (rather have question marks or cross signs instead of any image). Images of neutral and sad faces are pretty much confusing. Therefore, CNN algorithms have faced the difficulty of correctly detecting them properly. Therefore, for all the classifiers, F1 scores of neutral and sad emotions are not satisfactory.
+
+(3)The dataset is pretty small. Data augmentation can generate a large volume of training datasets by using the transformations of the face images, such as flip, shift, scaling, and rotation.
+
+(4)Several experiments need to be carried out with mode convolutional layers (such as 6 or more layers) to verify the effectiveness of the augmented dataset and the performance of these approached CNN models in
+comparison with some of the frequently used face recognition methods.
+
+(5)The proposed CNN model was implemented using GPU. Using deeper convolutional layers with millions to trillions of training datasets may increase the implementation cost.
+
+(6)Several other transfer learning models can be applied to improve the performance of facial recognition.
+
+(7)It is recommended that stakeholders consider these variables in building improved long-term facial emotion detection models, as well as include the full range of environmental implications of various data
+sources, usage of color images instead of grayscale images, and usage of more training data in developing future facial emotion detection.
+
+
+
+# Project-5: Deep Learning Project (MIT Applied Data Science)
+
+# Project Name: SVHN Digit Recognition using ANN and CNN (Github link: https://github.com/farzana-zaki/SVHN-Digit-Recognition-using-ANN-and-CNN)
+
+## Business Context:
+One of the most interesting tasks in deep learning is to recognize objects in natural scenes. The ability to process visual information using machine learning algorithms can be very useful, as demonstrated in various applications. The SVHN dataset contains over 600,000 labeled digits cropped from street-level photos. It is one of the most popular image recognition datasets. It has been used in neural networks created by Google to improve the map quality by automatically transcribing the address numbers from a patch of pixels. The transcribed number with a known street address helps pinpoint the location of the building it represents.
+
+## Objective:
+The objective is to predict the number depicted inside the image using Artificial or Fully Connected Feed Forward Neural Networks and Convolutional Neural Networks. I used various ANN and CNN models and, finally
+selected the one that provided me with the best performance. 
+
+## Observations:
+The CNN model gives about 91% accuracy on the test data. However, there are a few misclassifications between all classes. The average f1-score is much improved for the CNN model with 0.91. Previously, for ANN,
+f1-score was 0.77. Digits '0' and '4' have the highest f1-score with 0.93, whereas digit '3' has the lowest f1-score of 0.88 (for ANN, it was 0.65, around 35% improvement of f1-score for the digit '3').
+Again, the precision of digit '3' is the lowest (only 0.86) among all other digits for CNN but around 32% improvement of precision for digit '3' in CNN is observed in the model when compared to the ANN precision of digit '3' (precision = 0.65). A large number of images of digits '1' and '2' were predicted as digits '7', digit '3' was identified as '5' and vice versa, digit '4' was misclassified as digit '1', digit '6' as digit '5'and digit '8' as digit '3', '6' and '9'. Overall, CNN is better than ANN as a digit recognizer in this project.
+
+
+
+
+
+
